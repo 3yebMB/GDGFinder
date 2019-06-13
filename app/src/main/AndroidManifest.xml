@@ -3,6 +3,7 @@
 
     <!-- In order for our app to access the Internet, we need to define this permission. -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <!-- To access the location we need to ask for permission -->
     <!-- see https://developer.android.com/training/location/retrieve-current.html -->

@@ -23,6 +23,7 @@ apply plugin: "androidx.navigation.safeargs"
 
 android {
     compileSdkVersion 28
+    buildToolsVersion "29.0.0"
     dataBinding {
         enabled = true
     }
@@ -45,6 +46,18 @@ android {
     androidExtensions {
         experimental = true
     }
+
+    splits {
+        // Settings to build multiple APKs based on screen density.
+        density {
+
+            // Enable or disable building multiple APKs.
+            enable false
+
+            // Exclude these densities when building multiple APKs.
+            exclude "ldpi", "tvdpi", "xxxhdpi", "400dpi", "560dpi"
+        }
+    }
 }
 
 dependencies {
@@ -62,7 +75,7 @@ dependencies {
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:$version_lifecycle_extensions"
     // Use viewModelScope from lifecycle-viewmodel-ktx
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-alpha03"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0-alpha01"
 
     // Navigation
     implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
